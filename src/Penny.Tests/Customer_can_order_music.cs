@@ -10,40 +10,38 @@ namespace Penny.Tests
     public class Customer_can_order_music
     {
 		private string _result;
-		private bool _cardCharged;
-		private int _amountCharged;
-		private const string _ok = "OK";
+		private readonly Penny _penny;
+		private readonly Order _order;
+
+		public Customer_can_order_music()
+		{
+			_penny = new Penny();
+			_order = new Order();
+		}
 
 		[SetUp]
 		public void SetUp()
 		{
-			_cardCharged = false;
-			_result = SubmitOrder();
+			_order.CardCharged = false;
+			_result = _penny.SubmitOrder(_order);
 		}
 
 		[Test]
 		public void Should_get_an_ok_when_submitting_an_order()
 		{
-			Assert.That(_result,Is.EqualTo(_ok));
+			Assert.That(_result,Is.EqualTo(Order._ok));
 		}
 
 		[Test]
 		public void Should_charge_my_card()
 		{
-			Assert.IsTrue(_cardCharged);
+			Assert.IsTrue(_order.CardCharged);
 		}
 
 		[Test]
 		public void Should_charge_five_pounds()
 		{
-			Assert.That(_amountCharged, Is.EqualTo(5));
-		}
-
-		private string SubmitOrder()
-		{
-			_amountCharged = 5;
-			_cardCharged = true;
-			return _ok;
+			Assert.That(_order.AmountCharged, Is.EqualTo(5));
 		}
     }
 }

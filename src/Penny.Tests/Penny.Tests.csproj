@@ -43,6 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Customer_can_order_music.cs" />
+    <Compile Include="Order.cs" />
+    <Compile Include="Penny.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
