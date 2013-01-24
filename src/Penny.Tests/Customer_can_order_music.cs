@@ -11,13 +11,14 @@ namespace Penny.Tests
     {
 		private string _result;
 		private bool _cardCharged;
+		private int _amountCharged;
 		private const string _ok = "OK";
 
 		[SetUp]
 		public void SetUp()
 		{
 			_cardCharged = false;
-			_result = SubmitOrder(ref _cardCharged);
+			_result = SubmitOrder();
 		}
 
 		[Test]
@@ -32,9 +33,16 @@ namespace Penny.Tests
 			Assert.IsTrue(_cardCharged);
 		}
 
-		private string SubmitOrder(ref bool cardCharged)
+		[Test]
+		public void Should_charge_five_pounds()
 		{
-			cardCharged = true;
+			Assert.That(_amountCharged, Is.EqualTo(5));
+		}
+
+		private string SubmitOrder()
+		{
+			_amountCharged = 5;
+			_cardCharged = true;
 			return _ok;
 		}
     }
