@@ -1,4 +1,6 @@
 C:\development\Penny\src\Penny.Tests\bin\Debug\Penny.Tests.dll
 C:\development\Penny\src\Penny.Tests\bin\Debug\Penny.Tests.pdb
+C:\development\Penny\src\Penny.Tests\bin\Debug\nunit.framework.dll
+C:\development\Penny\src\Penny.Tests\bin\Debug\nunit.framework.xml
 C:\development\Penny\src\Penny.Tests\obj\Debug\Penny.Tests.dll
 C:\development\Penny\src\Penny.Tests\obj\Debug\Penny.Tests.pdb
